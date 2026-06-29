@@ -1,0 +1,83 @@
+📊 Dataset Information
+
+The dataset used in this project is publicly available:
+
+US Accidents Dataset (Kaggle)
+https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents
+
+This dataset contains 7+ million accident records across the United States, including:
+
+Location details (state, city, coordinates)
+Weather conditions
+Time of accident
+Severity level
+Road and traffic conditions
+
+⚠️ Note: The dataset is not included in this repository due to its large size. It must be downloaded separately from Kaggle.
+
+☁️ Cloud Architecture (AWS Services Used)
+
+This project is built using a serverless AWS Big Data architecture:
+
+Amazon S3 → Data storage (Raw + Processed data)
+Amazon EC2 → Dataset ingestion from Kaggle
+AWS Glue → ETL processing & data transformation
+AWS Glue Data Catalog → Metadata management
+Amazon Athena → SQL-based data analysis
+Amazon QuickSight → Data visualization dashboard
+Amazon CloudWatch → Monitoring & logs
+IAM Roles → Secure access management
+⚙️ Project Workflow
+Dataset downloaded from Kaggle using EC2
+Raw data stored in Amazon S3 (raw/)
+AWS Glue Crawler detects schema and creates metadata
+AWS Glue ETL job cleans and transforms data
+Processed data stored in Parquet format (processed/)
+Athena used for SQL-based analysis
+QuickSight dashboard created for visualization
+Machine learning model applied for accident severity prediction
+📈 Key Features & Insights
+Accident trends across US states
+Weather impact on accident severity
+Peak accident hours analysis
+Weekend vs weekday accident comparison
+Dangerous cities identification
+Traffic signal impact on accidents
+Machine learning model for severity prediction (Random Forest)
+🤖 Machine Learning Model
+Algorithm: Random Forest Classifier
+Input Features:
+Weather conditions
+Time of accident
+Location data
+Traffic infrastructure
+Output: Accident severity prediction
+Accuracy: ~68%
+📂 Repository Structure (Example)
+/scripts        → Python scripts (EC2 ingestion, ML models)
+/athena-queries → SQL queries used in Athena
+/docs           → Project report and documentation
+/screenshots    → Architecture & outputs
+
+⚠️ Large datasets and processed files are not included due to GitHub size limits.
+
+🔐 Security Highlights
+IAM Role-based authentication (no hardcoded credentials)
+S3 bucket access control enabled
+Encryption for secure data storage
+CloudWatch monitoring for system logs
+💡 Key Learning Outcomes
+Building a scalable AWS data lake
+ETL pipeline using AWS Glue
+Serverless analytics using Athena
+Data visualization using QuickSight
+Applying machine learning on big data
+Cost-optimized cloud architecture design
+👨‍💻 Author
+
+Raghava Krishna Anumari
+MSc Data Science – UK
+
+📌 Disclaimer
+
+This project uses publicly available data from Kaggle and is intended for educational and academic purposes only.
